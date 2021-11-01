@@ -1,6 +1,6 @@
 class App {
   static add(a, b) {
-    return a + 1+  b;
+    return a + b;
   }
   static substract(a, b) {
     return a - b;
