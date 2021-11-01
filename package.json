@@ -4,10 +4,18 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "test": "mocha",
-    "coverage": "nyc npm run test"
+    "test": "nyc mocha app.test.js --exit",
+    "start": "node app.js",
+    "coveralls": "cat ./coverage/lcov.info | ./node_modules/.bin/coveralls",
+    "coverage": "nyc report --reporter=text-lcov | coveralls && nyc report --reporter=lcov"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^4.3.4",
+    "coveralls": "^3.1.1",
+    "mocha": "^9.1.3",
+    "nyc": "^15.1.0"
+  }
 }
